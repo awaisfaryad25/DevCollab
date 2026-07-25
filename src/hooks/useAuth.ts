@@ -23,7 +23,7 @@ export const useRegister = () => {
     },
     onSuccess: (data) => {
       setAuth(data.user, data.token);
-      router.push("/app/dashboard");
+      router.push("/dashboard");
     },
   });
 };
@@ -41,12 +41,7 @@ export const useLogin = () => {
     },
     onSuccess: (data) => {
       setAuth(data.user, data.token);
-      // redirect based on role
-      if (data.user.role === "admin") {
-        router.push("/dashboard");
-      } else {
-        router.push("/app/dashboard");
-      }
+      router.push("/dashboard");
     },
   });
 };
@@ -75,7 +70,7 @@ export const useResetPassword = (token: string) => {
     },
     onSuccess: (data) => {
       setAuth(data.user, data.token);
-      router.push("/app/dashboard");
+      router.push("/dashboard");
     },
   });
 };

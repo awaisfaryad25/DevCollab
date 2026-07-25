@@ -1,16 +1,36 @@
 "use client";
 
+import { useEffect, useState } from "react";
+import { useRouter } from "next/navigation";
 import AppSidebar from "./app-sidebar";
-import {ModeToggle} from "./mode-toggle";
+import { ModeToggle } from "./mode-toggle";
 import UserNav from "./user-nav";
+import { useAuthStore } from "@/store/auth.store";
 
 interface ProtectedLayoutClientProps {
   children: React.ReactNode;
 }
 
-export function ProtectedLayoutClient({
-  children,
-}: ProtectedLayoutClientProps) {
+export function ProtectedLayoutClient({ children, }: ProtectedLayoutClientProps) {
+
+  const { isAuthenticated } = useAuthStore();
+  const router = useRouter();
+  const [hydrated, setHydrated] = useState(false);
+
+  // Wait for Zustand to rehydrate from localStorage
+  useEffect(() => {
+    setHydrated(true);
+  }, []);
+
+  // Redirect if not authenticated
+  useEffect(() => {
+    if (hydrated && !isAuthenticated) {
+      router.replace("/login");
+    }
+  }, [hydrated, isAuthenticated, router]);
+
+  // Show nothing while hydrating or redirecting
+  if (!hydrated || !isAuthenticated) return null;
 
   return (
     <div className="flex h-screen w-full overflow-hidden">
