@@ -3,6 +3,7 @@ import Link from "next/link";
 import { ThemeToggle } from "@/app/ui/theme-toggle";
 import SocialLinks from "./SocialLinks";
 import MainLogo from "./MainLogo";
+import Newsletter from "./NewsLetter";
 
 const footerLinks = {
   Product: [
@@ -38,6 +39,9 @@ const Footer = () => {
             </p>
 
             <SocialLinks/>
+            <div className="mt-4">
+              <Newsletter/>
+            </div>
           </div>
 
           {/* Links */}
