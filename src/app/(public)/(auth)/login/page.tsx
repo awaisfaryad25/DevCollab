@@ -4,21 +4,25 @@ import { useState } from "react";
 import Link from "next/link";
 import { Eye, EyeOff, Loader2, Lock, Mail } from "lucide-react";
 import { FcGoogle } from "react-icons/fc";
-import { cn } from "@/lib/utils";
+import { useLogin } from "@/hooks/useAuth";
 import BackgroundGradient from "@/app/ui/background-gradient";
 import Input from "@/app/ui/Input";
 import MainLogo from "../../components/MainLogo";
 
 export default function LoginPage() {
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
   const [show, setShow] = useState(false);
-  const [loading, setLoading] = useState(false);
   const [googleLoading, setGoogleLoading] = useState(false);
 
-  const handleSubmit = async (e: React.FormEvent) => {
+  const { mutate: login, isPending, error } = useLogin();
+
+  // Extract error message from axios error response
+  const errorMessage = (error as any)?.response?.data?.message || "";
+
+  const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    setLoading(true);
-    // TODO: call your login API here
-    setTimeout(() => setLoading(false), 1500);
+    login({ email, password });
   };
 
   const handleGoogle = () => {
@@ -30,24 +34,36 @@ export default function LoginPage() {
   return (
     <div className="relative min-h-screen px-4 py-6">
       <div className="w-full max-w-7xl mx-auto">
-        <MainLogo/>
+        <MainLogo />
       </div>
       <BackgroundGradient />
-      {/* Card */}
+
       <div className="p-4 w-full max-w-sm mx-auto mt-6 lg:mt-20">
-        <div className="mb-4 ">
-          <h1 className="text-2xl lg:text-3xl font-semibold">
-            Welcome back!
-          </h1>
-          <p className="mt-1 text-sm ">
-            Log in to your DevCollab account
-          </p>
+        <div className="mb-4">
+          <h1 className="text-2xl lg:text-3xl font-semibold">Welcome back!</h1>
+          <p className="mt-1 text-sm">Log in to your DevCollab account</p>
         </div>
+
+        {/* API error */}
+        {errorMessage && (
+          <div className="mb-4 rounded-lg border border-danger/20 bg-danger/10 px-3 py-2.5 text-sm text-danger">
+            {errorMessage}
+          </div>
+        )}
 
         {/* Form */}
         <form onSubmit={handleSubmit} className="space-y-2">
           <div className="space-y-4">
-            <Input label="Email" className="border-primary!" type="email" placeholder="you@example.com" leftIcon={<Mail className="size-4" />} required />
+            <Input
+              label="Email"
+              className="border-primary!"
+              type="email"
+              placeholder="you@example.com"
+              leftIcon={<Mail className="size-4" />}
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              required
+            />
             <Input
               label="Password"
               type={show ? "text" : "password"}
@@ -56,18 +72,25 @@ export default function LoginPage() {
               leftIcon={<Lock className="size-4" />}
               rightIcon={show ? <Eye className="h-4 w-4" /> : <EyeOff className="h-4 w-4" />}
               onRightIconClick={() => setShow(!show)}
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+              required
             />
           </div>
+
           <div className="text-sm text-end text-primary">
-            <Link href="/forgot-password" className="hover:underline">Forgot Password?</Link>
+            <Link href="/forgot-password" className="hover:underline">
+              Forgot Password?
+            </Link>
           </div>
+
           <button
             type="submit"
-            disabled={loading}
+            disabled={isPending}
             className="gradient flex w-full mt-8 items-center justify-center gap-2 rounded-lg py-2.5 text-sm font-medium text-white transition-colors disabled:opacity-60"
           >
-            {loading && <Loader2 className="h-4 w-4 animate-spin" />}
-            Log in
+            {isPending && <Loader2 className="h-4 w-4 animate-spin" />}
+            {isPending ? "Logging in..." : "Log in"}
           </button>
         </form>
 
@@ -77,29 +100,25 @@ export default function LoginPage() {
           <span className="text-xs text-muted-foreground">or</span>
           <div className="h-px flex-1 bg-border" />
         </div>
-        
+
         {/* Google OAuth */}
         <button
           type="button"
           onClick={handleGoogle}
           disabled={googleLoading}
-          className="flex w-full items-center justify-center gap-3 rounded-lg border border-primary bg-background py-2.5 text-sm font-medium text-foreground transition-colors hover:bg-accen hover:bg-primary/10 disabled:opacity-60"
+          className="flex w-full items-center justify-center gap-3 rounded-lg border border-primary bg-background py-2.5 text-sm font-medium text-foreground transition-colors hover:bg-primary/10 disabled:opacity-60"
         >
           {googleLoading ? (
             <Loader2 className="h-4 w-4 animate-spin" />
           ) : (
-            <FcGoogle className="size-4.5"/>
+            <FcGoogle className="size-4.5" />
           )}
           Continue with Google
         </button>
 
-        {/* Sign up link */}
         <p className="mt-2 text-center text-xs text-muted-foreground">
           Don't have an account?{" "}
-          <Link
-            href="/register"
-            className="font-medium text-primary hover:underline"
-          >
+          <Link href="/register" className="font-medium text-primary hover:underline">
             Sign up free
           </Link>
         </p>
