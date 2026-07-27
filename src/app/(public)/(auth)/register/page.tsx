@@ -2,10 +2,11 @@
 
 import { useState } from "react";
 import Link from "next/link";
-import { Eye, EyeOff, Loader2, Mail, Lock, User } from "lucide-react";
+import { Eye, EyeOff, Loader2, Mail, Lock, User, CheckCircle2 } from "lucide-react";
+import { FcGoogle } from "react-icons/fc";
+import { useRegister } from "@/hooks/useAuth";
 import BackgroundGradient from "@/app/ui/background-gradient";
 import Input from "@/app/ui/Input";
-import { FcGoogle } from "react-icons/fc";
 import MainLogo from "../../components/MainLogo";
 
 const passwordRules = [
@@ -15,24 +16,35 @@ const passwordRules = [
 ];
 
 export default function RegisterPage() {
-  const [show, setShow] = useState(false);
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [loading, setLoading] = useState(false);
+  const [show, setShow] = useState(false);
   const [googleLoading, setGoogleLoading] = useState(false);
 
-  const handleSubmit = async (e: React.FormEvent) => {
+  const { mutate: register, isPending, error } = useRegister();
+
+  // Extract error message from axios error response
+  const errorMessage = (error as any)?.response?.data?.message || "";
+
+  const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    setLoading(true);
-    // TODO: call your register API here
-    setTimeout(() => setLoading(false), 1500);
+
+    // Client-side validation before hitting API
+    if (password.length < 8) return;
+    if (!/[A-Z]/.test(password)) return;
+    if (!/[0-9]/.test(password)) return;
+
+    register({ name, email, password });
   };
 
   return (
     <div className="relative min-h-screen px-4 py-6">
       <div className="w-full max-w-7xl mx-auto">
-        <MainLogo/>
+        <MainLogo />
       </div>
       <BackgroundGradient />
+
       <div className="p-4 w-full max-w-sm mx-auto mt-6 lg:mt-10">
         <div className="mb-4">
           <h1 className="text-2xl lg:text-3xl font-semibold text-foreground">
@@ -43,28 +55,75 @@ export default function RegisterPage() {
           </p>
         </div>
 
+        {/* API error */}
+        {errorMessage && (
+          <div className="mb-4 rounded-lg border border-danger/20 bg-danger/10 px-3 py-2.5 text-sm text-danger">
+            {errorMessage}
+          </div>
+        )}
+
         <form onSubmit={handleSubmit} className="space-y-2">
           <div className="space-y-4">
-            <Input label="Full Name" className="border-primary!" type="text" placeholder="Awais Faryad" leftIcon={<User className="size-4" />} required />
-            <Input label="Email" className="border-primary!" type="email" placeholder="you@example.com" leftIcon={<Mail className="size-4" />} required />
             <Input
-              label="Password"
-              type={show ? "text" : "password"}
-              placeholder="••••••••"
+              label="Full Name"
               className="border-primary!"
-              leftIcon={<Lock className="size-4" />}
-              rightIcon={show ? <Eye className="h-4 w-4" /> : <EyeOff className="h-4 w-4" />}
-              onRightIconClick={() => setShow(!show)}
+              type="text"
+              placeholder="Awais Faryad"
+              leftIcon={<User className="size-4" />}
+              value={name}
+              onChange={(e) => setName(e.target.value)}
+              required
             />
+            <Input
+              label="Email"
+              className="border-primary!"
+              type="email"
+              placeholder="you@example.com"
+              leftIcon={<Mail className="size-4" />}
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              required
+            />
+            <div>
+              <Input
+                label="Password"
+                type={show ? "text" : "password"}
+                placeholder="••••••••"
+                className="border-primary!"
+                leftIcon={<Lock className="size-4" />}
+                rightIcon={show ? <Eye className="h-4 w-4" /> : <EyeOff className="h-4 w-4" />}
+                onRightIconClick={() => setShow(!show)}
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
+              />
+
+              {/* Live password strength hints */}
+              {password.length > 0 && (
+                <ul className="mt-2 space-y-1">
+                  {passwordRules.map(({ label, test }) => (
+                    <li key={label} className="flex items-center gap-1.5 text-xs">
+                      <CheckCircle2
+                        className={`h-3.5 w-3.5 ${
+                          test(password) ? "text-success" : "text-muted-foreground"
+                        }`}
+                      />
+                      <span className={test(password) ? "text-success" : "text-muted-foreground"}>
+                        {label}
+                      </span>
+                    </li>
+                  ))}
+                </ul>
+              )}
+            </div>
           </div>
 
           <button
             type="submit"
-            disabled={loading}
+            disabled={isPending}
             className="gradient flex w-full mt-8 items-center justify-center gap-2 rounded-lg py-2.5 text-sm font-medium text-white transition-colors disabled:opacity-60"
           >
-            {loading && <Loader2 className="h-4 w-4 animate-spin" />}
-            Create account
+            {isPending && <Loader2 className="h-4 w-4 animate-spin" />}
+            {isPending ? "Creating account..." : "Create account"}
           </button>
         </form>
 
@@ -84,7 +143,7 @@ export default function RegisterPage() {
           {googleLoading ? (
             <Loader2 className="h-4 w-4 animate-spin" />
           ) : (
-            <FcGoogle className="size-4.5"/>
+            <FcGoogle className="size-4.5" />
           )}
           Continue with Google
         </button>
