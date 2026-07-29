@@ -1,6 +1,8 @@
 import { BadgeCheck, HelpCircle, LogOut, Settings, User, ChevronsUpDown, ChevronDown } from 'lucide-react';
 import Link from 'next/link';
-import { useState, useRef, useEffect } from 'react'
+import { useState, useRef, useEffect } from 'react';
+import { useAuthStore } from '@/store/auth.store';
+import { useLogout } from '@/hooks/useAuth';
 
 interface User {
   firstName: string;

@@ -5,20 +5,28 @@ const api = axios.create({
   headers: { "Content-Type": "application/json" },
 });
 
-// Attach JWT token to every request automatically
+// Read token from Zustand's persisted storage key
 api.interceptors.request.use((config) => {
-  // read token from localStorage
-  const token = localStorage.getItem("token");
-  if (token) config.headers.Authorization = `Bearer ${token}`;
+  try {
+    const stored = localStorage.getItem("auth-storage");
+    if (stored) {
+      const parsed = JSON.parse(stored);
+      const token = parsed?.state?.token;
+      if (token) config.headers.Authorization = `Bearer ${token}`;
+    }
+  } catch {
+    // localStorage not available (SSR)
+  }
   return config;
 });
 
-// Handle 401 globally — redirect to login
+// Handle 401 globally
 api.interceptors.response.use(
   (response) => response,
   (error) => {
     if (error.response?.status === 401) {
-      localStorage.removeItem("token");
+      // clear Zustand storage
+      localStorage.removeItem("auth-storage");
       window.location.href = "/login";
     }
     return Promise.reject(error);
