@@ -22,12 +22,7 @@ const UserNav = () => {
   }, []);
 
   const getInitials = (name: string): string => {
-    return name
-      .split(' ')
-      .map((n) => n.charAt(0))
-      .join('')
-      .toUpperCase()
-      .slice(0, 2);
+    return name.split(' ').map((n) => n.charAt(0)).join('').toUpperCase().slice(0, 2);
   };
 
   const closeDropdown = () => setIsDropdownOpen(false);
