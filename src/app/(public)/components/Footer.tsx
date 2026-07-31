@@ -19,7 +19,7 @@ const footerLinks = {
     { label: "Contact", href: "/contact" },
   ],
   Legal: [
-    { label: "Privacy policy", href: "/privacy" },
+    { label: "Privacy Policy", href: "/privacy-policy" },
     { label: "Terms of service", href: "/terms" },
     { label: "Cookie policy", href: "/cookies" },
   ],
