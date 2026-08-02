@@ -7,6 +7,7 @@ import { useForgotPassword } from "@/hooks/useAuth";
 import BackgroundGradient from "@/app/ui/background-gradient";
 import Input from "@/app/ui/Input";
 import MainLogo from "../../components/MainLogo";
+import { ThemeToggle } from "@/app/ui/theme-toggle";
 
 export default function ForgotPasswordPage() {
   const [email, setEmail] = useState("");
@@ -23,8 +24,9 @@ export default function ForgotPasswordPage() {
 
   return (
     <div className="relative min-h-screen px-4 py-6">
-      <div className="w-full max-w-7xl mx-auto">
+      <div className="w-full max-w-7xl mx-auto flex items-center justify-between gap-4">
         <MainLogo />
+        <ThemeToggle />
       </div>
       <BackgroundGradient />
 

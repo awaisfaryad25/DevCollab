@@ -8,6 +8,7 @@ import { useResetPassword } from "@/hooks/useAuth";
 import BackgroundGradient from "@/app/ui/background-gradient";
 import Input from "@/app/ui/Input";
 import MainLogo from "../../components/MainLogo";
+import { ThemeToggle } from "@/app/ui/theme-toggle";
 
 export default function ResetPasswordPage() {
   const { token } = useParams<{ token: string }>();
@@ -31,8 +32,9 @@ export default function ResetPasswordPage() {
 
   return (
     <div className="min-h-screen px-4 py-6">
-      <div className="w-full max-w-7xl mx-auto">
+      <div className="w-full max-w-7xl mx-auto flex items-center justify-between gap-4">
         <MainLogo />
+        <ThemeToggle />
       </div>
       <BackgroundGradient />
 
