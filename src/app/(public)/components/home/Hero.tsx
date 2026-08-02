@@ -6,7 +6,7 @@ import DashboardPreview from "./DashboardPreview";
 
 const Hero = () => {
   return (
-    <section className="relative overflow-hidden px-4 py-12 text-center md:py-16">
+    <section className="relative overflow-hidden px-6 py-12 text-center md:py-16">
       {/* Subtle background glow */}
       <div className="pointer-events-none absolute inset-0 flex items-center justify-center">
         <div className="h-120 w-200 rounded-full bg-primary opacity-20 blur-3xl dark:bg-secondary/20" />

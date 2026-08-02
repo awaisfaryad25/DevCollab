@@ -6,17 +6,17 @@ import MainLogo from "./MainLogo";
 import Newsletter from "./NewsLetter";
 
 const footerLinks = {
-  Product: [
-    { label: "Features", href: "#features" },
-    { label: "Pricing", href: "#pricing" },
-    { label: "Changelog", href: "/changelog" },
-    { label: "Roadmap", href: "/roadmap" },
-  ],
   Company: [
     { label: "About", href: "/about" },
     { label: "Blog", href: "/blog" },
     { label: "Careers", href: "/careers" },
     { label: "Contact", href: "/contact" },
+  ],
+  Product: [
+    { label: "Features", href: "#features" },
+    { label: "Pricing", href: "#pricing" },
+    { label: "Changelog", href: "/changelog" },
+    { label: "Roadmap", href: "/roadmap" },
   ],
   Legal: [
     { label: "Privacy Policy", href: "/privacy-policy" },
@@ -27,7 +27,7 @@ const footerLinks = {
 
 const Footer = () => {
   return (
-    <footer className="bg-muted/40 border-t border-border px-4 pt-16 pb-6">
+    <footer className="bg-muted/40 border-t border-border px-6 pt-16 pb-6">
       <div className="w-full max-w-7xl mx-auto">
         <div className="grid gap-12 md:grid-cols-5">
           {/* Brand */}

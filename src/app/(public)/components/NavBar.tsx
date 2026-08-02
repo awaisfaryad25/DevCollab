@@ -35,11 +35,7 @@ const NavBar = () => {
 
   return (
     <>
-      <nav
-        className={` px-4 sm:px-6 lg:px-8 sticky top-0 z-50 transition-all duration-300 ${
-          isScrolled ? " backdrop-blur-lg shadow-lg" : " shadow-md"
-        }`}
-      >
+      <nav className={` px-6 lg:px-8 sticky top-0 z-50 transition-all duration-300 ${ isScrolled ? " backdrop-blur-lg shadow-lg" : " shadow-md" }`} >
         <div className="w-full max-w-7xl mx-auto">
           <div className="flex items-center justify-between h-16">
             <div className="lg:pr-10">
@@ -67,19 +63,13 @@ const NavBar = () => {
               aria-expanded={isMobileMenuOpen}
             >
               <span
-                className={`w-6 h-0.5 bg-heading transition-all duration-300 ease-in-out ${
-                  isMobileMenuOpen ? "rotate-45 translate-y-2" : ""
-                }`}
+                className={`w-6 h-0.5 bg-heading transition-all duration-300 ease-in-out ${isMobileMenuOpen ? "rotate-45 translate-y-2" : "" }`}
               />
               <span
-                className={`w-6 h-0.5 bg-heading transition-all duration-300 ease-in-out ${
-                  isMobileMenuOpen ? "opacity-0" : ""
-                }`}
+                className={`w-6 h-0.5 bg-heading transition-all duration-300 ease-in-out ${ isMobileMenuOpen ? "opacity-0" : "" }`}
               />
               <span
-                className={`w-6 h-0.5 bg-heading transition-all duration-300 ease-in-out ${
-                  isMobileMenuOpen ? "-rotate-45 -translate-y-2" : ""
-                }`}
+                className={`w-6 h-0.5 bg-heading transition-all duration-300 ease-in-out ${ isMobileMenuOpen ? "-rotate-45 -translate-y-2" : "" }`}
               />
             </button>
 

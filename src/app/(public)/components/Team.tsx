@@ -55,7 +55,7 @@ export default function TeamCarousel() {
   };
 
   return (
-    <section id="testimonials" className="relative flex min-h-screen flex-col items-center justify-center overflow-hidden bg-muted/40 p-4 md:pb-10 2xl:pb-16">
+    <section id="testimonials" className="relative flex min-h-screen flex-col items-center justify-center overflow-hidden bg-muted/40 p-6 md:pb-10 2xl:pb-16">
       {/* Background Title */}
       <h1 className="pointer-events-none absolute top-10 left-1/2 -translate-x-1/2 whitespace-nowrap text-4xl md:5xl 2xl:text-[7rem] font-black uppercase tracking-tight text-transparent gradient-transparent! bg-clip-text">
         OUR TEAM

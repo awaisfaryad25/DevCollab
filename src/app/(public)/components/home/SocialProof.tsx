@@ -2,7 +2,7 @@
 const SocialProof = () => {
   return (
     <section className="border-y border-border bg-muted/40 py-8">
-      <div className="w-full max-w-5xl mx-auto px-4 text-center">
+      <div className="w-full max-w-5xl mx-auto px-6 text-center">
         <p className="mb-6 text-xs font-medium uppercase tracking-widest text-muted-foreground">
           Trusted by dev teams at
         </p>
