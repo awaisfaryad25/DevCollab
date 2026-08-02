@@ -21,7 +21,7 @@ export default function ContactPage() {
   return (
     <main className="min-h-screen bg-background">
       {/* Header */}
-      <section className="border-b border-border bg-muted/40 px-4 py-20 text-center">
+      <section className="border-b border-border bg-muted/40 px-6 py-20 text-center">
         <div className="mx-auto max-w-xl">
           <span className="mb-3 inline-block text-xs font-semibold uppercase tracking-widest text-secondary">
             Contact
@@ -35,8 +35,8 @@ export default function ContactPage() {
         </div>
       </section>
 
-      <section className="px-4 py-20">
-        <div className="mx-auto grid w-full max-w-11/12 md:max-w-10/13 gap-12 md:grid-cols-2">
+      <section className="px-6 py-20">
+        <div className="mx-auto grid w-full max-w-7xl gap-12 md:grid-cols-2">
           {/* Info */}
           <div>
             <h2 className="mb-6 text-xl font-semibold text-foreground">

@@ -44,7 +44,7 @@ export default function BlogPage() {
   return (
     <main className="min-h-screen bg-background">
       {/* Header */}
-      <section className="border-b border-border bg-muted/40 px-4 py-20 text-center">
+      <section className="border-b border-border bg-muted/40 px-6 py-20 text-center">
         <div className="mx-auto max-w-2xl">
           <span className="mb-3 inline-block text-xs font-semibold uppercase tracking-widest text-secondary">
             Blog
@@ -60,8 +60,8 @@ export default function BlogPage() {
       </section>
 
       {/* Posts */}
-      <section className="px-4 py-20">
-        <div className="w-full max-w-11/12 md:max-w-10/13 mx-auto space-y-8">
+      <section className="px-6 py-20">
+        <div className="w-full max-w-7xl mx-auto space-y-8">
           {posts.map((post) => (
             <Link
               key={post.slug}

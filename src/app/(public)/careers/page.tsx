@@ -138,7 +138,7 @@ export default function CareersPage() {
   return (
     <main className="min-h-screen bg-background">
       {/* Header */}
-      <section className="border-b border-border bg-muted/40 px-4 py-20 text-center">
+      <section className="border-b border-border bg-muted/40 px-6 py-20 text-center">
         <div className="mx-auto max-w-2xl">
           <span className="mb-3 inline-block text-xs font-semibold uppercase tracking-widest text-primary">
             Careers
@@ -154,7 +154,7 @@ export default function CareersPage() {
       </section>
 
       {/* Perks */}
-      <section className="px-4 py-20">
+      <section className="px-6 py-20">
         <div className="w-full max-w-7xl mx-auto">
           <h2 className="mb-8 text-2xl font-semibold text-foreground">Why DevCollab</h2>
           <ul className="grid gap-3 sm:grid-cols-2">
@@ -169,7 +169,7 @@ export default function CareersPage() {
       </section>
 
       {/* Open roles - Redesigned to match CareersJobs component */}
-      <section className="border-t border-border bg-muted/40 px-4 py-12">
+      <section className="border-t border-border bg-muted/40 px-6 py-12">
         <div className="w-full max-w-7xl mx-auto">
           <h2 className="mb-12 text-2xl font-semibold text-foreground text-center">
             We're Growing — Join Us
