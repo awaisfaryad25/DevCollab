@@ -33,7 +33,7 @@ export default function AboutPage() {
   return (
     <main className="min-h-screen bg-background">
       {/* Hero */}
-      <section className="border-b border-border px-4 py-24 text-center">
+      <section className="border-b border-border px-6 py-24 text-center">
         <div className="mx-auto max-w-2xl">
           <span className="mb-3 inline-block text-xs font-semibold uppercase tracking-widest text-primary">
             About us
@@ -50,7 +50,7 @@ export default function AboutPage() {
       </section>
 
       {/* Mission */}
-      <section className="px-4 py-20 bg-muted/40">
+      <section className="px-6 py-20 bg-muted/40">
         <div className="mx-auto max-w-3xl">
           <h2 className="mb-4 text-2xl font-semibold text-foreground">Our mission</h2>
           <p className="text-base leading-relaxed text-muted-foreground">
@@ -63,8 +63,8 @@ export default function AboutPage() {
       </section>
 
       {/* Values */}
-      <section className="border-y border-border px-4 py-20">
-        <div className="w-full max-w-11/12 md:max-w-10/13 mx-auto">
+      <section className="border-y border-border px-6 py-20">
+        <div className="w-full max-w-7xl mx-auto">
           <h2 className="mb-10 text-2xl font-semibold text-foreground">What we believe</h2>
           <div className="grid gap-8 md:grid-cols-3">
             {values.map(({ icon: Icon, title, desc }) => (
@@ -82,8 +82,8 @@ export default function AboutPage() {
 
       {/* Team */}
       <Team/>
-      {/* <section className="px-4 py-20">
-        <div className="w-full max-w-11/12 md:max-w-10/13 mx-auto">
+      {/* <section className="px-6 py-20">
+        <div className="w-full max-w-7xl mx-auto">
           <h2 className="mb-10 text-2xl font-semibold text-foreground">The team</h2>
           <div className="grid gap-6 sm:grid-cols-3">
             {team.map(({ name, role, initials, color }) => (
@@ -100,7 +100,7 @@ export default function AboutPage() {
       </section> */}
 
       {/* CTA */}
-      <section className="border-t border-border px-4 py-20 text-center">
+      <section className="border-t border-border px-6 py-20 text-center">
         <h2 className="text-2xl font-semibold text-foreground">
           Want to join us?
         </h2>
