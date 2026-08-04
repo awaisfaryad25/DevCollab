@@ -78,8 +78,8 @@ const NavBar = () => {
               <Link href="/login" className="px-4 py-2 text-dark-gray font-semibold hover:bg-linear-to-r from-primary to-secondary hover:bg-clip-text hover:text-transparent transition-colors duration-200">
                 Log In
               </Link>
-              <Link href="/register" className="gradient px-5 py-2 text-white font-semibold rounded-lg hover:shadow-lg hover:scale-105 transition-all duration-200">
-                Sign Up
+              <Link href="/contact" className="gradient px-5 py-2 text-white font-semibold rounded-lg hover:shadow-lg hover:scale-105 transition-all duration-200">
+                Contact Us
               </Link>
             </div>
           </div>
@@ -119,11 +119,11 @@ const NavBar = () => {
               Log In
             </Link> */}
             <Link
-              href="/register"
+              href="/contact"
               onClick={closeMobileMenu}
               className="gradient px-5 py-2 text-center text-white font-semibold rounded-lg hover:shadow-lg transition-all duration-200"
             >
-              Sign Up
+              Contact Us
             </Link>
           </div>
         </div>
