@@ -27,10 +27,11 @@ const NavBar = () => {
   const closeMobileMenu = () => setIsMobileMenuOpen(false);
 
   const navLinks = [
+    { label: "About Us", href: "/about" },
     { label: "Features", href: "#features" },
     { label: "How it works", href: "#how-it-works" },
     { label: "Pricing", href: "#pricing" },
-    { label: "Testimonials", href: "#testimonials" },
+    { label: "Roadmap", href: "/roadmap" },
   ];
 
   return (
