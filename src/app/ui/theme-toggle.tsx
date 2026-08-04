@@ -32,9 +32,9 @@ export function ThemeToggle() {
           aria-label={`${label} theme`}
           title={label}
           className={cn(
-            "flex h-7 w-7 items-center justify-center rounded-md transition-colors",
+            "flex size-7 items-center justify-center rounded-md transition-colors",
             theme === value
-              ? "bg-secondary text-white"
+              ? "gradient text-white"
               : "text-muted-foreground hover:bg-accent hover:text-foreground"
           )}
         >
