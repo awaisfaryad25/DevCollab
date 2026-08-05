@@ -3,7 +3,7 @@ import { cn } from "@/lib/utils";
 const DashboardPreview = () => {
   return (
     <div>
-      <div className="relative mx-auto mt-16 max-w-5xl">
+      <div className="relative mx-auto mt-16 max-w-7xl">
         <div className="overflow-hidden rounded-xl border border-border bg-muted shadow-2xl shadow-primary dark:shadow-secondary/20">
           
           {/* Fake browser bar */}
@@ -53,7 +53,7 @@ const DashboardPreview = () => {
                     <div className="mb-2 text-xs font-medium text-muted-foreground">
                       {col}
                     </div>
-                    {[...Array(3)].map((_, i) => (
+                    {[...Array(5)].map((_, i) => (
                       <div key={i} className="mb-1.5 h-8 rounded-md border border-border bg-background"/>
                     ))}
                   </div>

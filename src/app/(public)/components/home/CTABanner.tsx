@@ -5,7 +5,7 @@ import { ArrowRight } from "lucide-react";
 const CTABanner = () => {
   return (
     <section className="px-6 py-24">
-      <div className="mx-auto max-w-3xl rounded-2xl bg-secondary px-8 py-16 text-center">
+      <div className="mx-auto max-w-7xl rounded-2xl bg-secondary px-8 py-16 text-center">
         <h2 className="font-semibold text-white! text-3xl md:text-4xl">
           Ready to build faster?
         </h2>
