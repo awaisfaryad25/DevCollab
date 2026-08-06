@@ -1,26 +1,57 @@
 import Link from "next/link";
-import { ArrowRight, Users, Zap, ShieldCheck } from "lucide-react";
+import {
+  ArrowRight,
+  Users,
+  Zap,
+  ShieldCheck,
+  MinusSquareIcon,
+  Globe,
+  UsersRound,
+  type LucideIcon,
+} from "lucide-react";
 import Team from '../components/Team'
-// import SpotlightGrid from "@/app/ui/spot-light-grid";
-// import NeumorphicInputs from "@/app/ui/NeumorphicInputs";
-// import ClockDisplay from "@/app/ui/clock/ClockDisplay";
 
 const values = [
   {
     icon: Users,
-    title: "Built for teams",
-    desc: "Every decision we make starts with one question: does this make teams work better together?",
+    title: "Developer First",
+    desc: "Everything we build is designed to help developers collaborate more effectively and focus on writing great code."
   },
   {
     icon: Zap,
-    title: "Speed over everything",
-    desc: "Slow tools kill momentum. We obsess over performance so your team never waits on the software.",
+    title: "Fast Collaboration",
+    desc: "From project discovery to contribution, we make it simple for developers to connect and build together."
   },
   {
     icon: ShieldCheck,
-    title: "Privacy by default",
-    desc: "Your data is yours. We never sell it, never share it, and encrypt everything at rest and in transit.",
+    title: "Trust & Transparency",
+    desc: "Open communication, secure collaboration, and respect for every contributor are at the core of our platform."
+  }
+];
+
+const items = [
+  {
+    title: "Mission",
+    icon: MinusSquareIcon,
+    description: [
+      "Our mission is to empower developers to build better software together. DevCollab provides a collaborative platform where developers can discover projects, contribute their skills, connect with like-minded engineers, and turn innovative ideas into successful products."
+    ]
   },
+  {
+    title: "Vision",
+    icon: Globe,
+    description: [
+      "We envision a future where collaboration becomes the foundation of software development. By connecting talented developers, startups, and creators, we aim to make building great software more accessible, efficient, and rewarding."
+    ]
+  },
+  {
+    title: "Leadership",
+    icon: UsersRound,
+    description: [
+      "DevCollab is built by developers who understand the challenges of modern software engineering. Our team combines technical expertise with a passion for open collaboration, creating tools that help teams communicate, innovate, and deliver exceptional products.",
+      "We believe in transparency, continuous learning, community-driven development, and building software that truly makes developers more productive."
+    ]
+  }
 ];
 
 const team = [
@@ -50,15 +81,29 @@ export default function AboutPage() {
       </section>
 
       {/* Mission */}
-      <section className="px-6 py-20 bg-muted/40">
-        <div className="mx-auto max-w-3xl">
-          <h2 className="mb-4 text-2xl font-semibold text-foreground">Our mission</h2>
-          <p className="text-base leading-relaxed text-muted-foreground">
-            Most project management software was designed for managers, not developers.
-            It's full of features no one asked for and missing the ones that actually
-            matter. Our mission is to build the tool we always wished existed — one
-            that stays out of your way and helps your team focus on building.
-          </p>
+      <section className="mx-auto max-w-7xl px-6 py-20 bg-muted/40">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-16">
+          {items.map((item, index) => {
+            const Icon = item.icon;
+            return (
+              <div
+                key={item.title}
+                className="flex flex-col gap-4"
+              >
+                <div className="flex items-center gap-3">
+                  <Icon className="w-8 h-8 lg:w-10 lg:h-10 text-brand-green" strokeWidth={1.5} />
+                  <h3 className="text-2xl lg:text-[25px] font-semibold font-display text-text-dark">
+                    {item.title}
+                  </h3>
+                </div>
+                <div className="flex flex-col gap-1 text-text-body font-sans text-sm lg:text-[15px] xl:text-[13px] leading-relaxed">
+                  {item.description.map((para, i) => (
+                    <p key={i}>{para}</p>
+                  ))}
+                </div>
+              </div>
+            );
+          })}
         </div>
       </section>
 
