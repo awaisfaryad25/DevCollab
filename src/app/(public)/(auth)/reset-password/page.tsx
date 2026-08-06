@@ -66,7 +66,7 @@ export default function ResetPasswordPage() {
                   label="New Password"
                   type={showPassword ? "text" : "password"}
                   placeholder="••••••••"
-                  className="border-primary!"
+                  className="border-primary! 2xl:py-3"
                   leftIcon={<Lock className="size-4" />}
                   rightIcon={showPassword ? <Eye className="size-4" /> : <EyeOff className="size-4" />}
                   onRightIconClick={() => setShowPassword(!showPassword)}
@@ -79,7 +79,7 @@ export default function ResetPasswordPage() {
                     label="Confirm Password"
                     type={showConfirm ? "text" : "password"}
                     placeholder="••••••••"
-                    className="border-primary!"
+                    className="border-primary! 2xl:py-3"
                     leftIcon={<Lock className="size-4" />}
                     rightIcon={showConfirm ? <Eye className="size-4" /> : <EyeOff className="size-4" />}
                     onRightIconClick={() => setShowConfirm(!showConfirm)}
@@ -94,7 +94,7 @@ export default function ResetPasswordPage() {
               <button
                 type="submit"
                 disabled={isPending || mismatch || password.length < 8}
-                className="gradient mt-8 flex w-full items-center justify-center gap-2 rounded-lg py-2.5 text-sm font-medium text-white transition-colors disabled:opacity-60"
+                className="gradient mt-8 flex w-full items-center justify-center gap-2 rounded-lg py-2.5 2xl:py-3.5 text-sm font-medium text-white transition-colors disabled:opacity-60"
               >
                 {isPending && <Loader2 className="h-4 w-4 animate-spin" />}
                 {isPending ? "Resetting..." : "Reset password"}

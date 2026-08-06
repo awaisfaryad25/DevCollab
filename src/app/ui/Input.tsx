@@ -44,7 +44,7 @@ const Input = React.forwardRef<HTMLInputElement, InputProps>(
 
           {/* Left icon */}
           {leftIcon && (
-            <div className="pointer-events-none absolute left-3 flex items-center text-text">
+            <div className="pointer-events-none absolute left-3 2xl:left-4 flex items-center text-text">
               {leftIcon}
             </div>
           )}
@@ -61,9 +61,9 @@ const Input = React.forwardRef<HTMLInputElement, InputProps>(
             className={cn(
               // base
               "w-full rounded-lg border bg-background text-sm text-text placeholder:text-muted-foreground",
-              "px-3 py-2.5 transition-colors outline-none",
+              "px-3 py-2.5 2xl:px-4 transition-colors outline-none",
               "focus:ring-2 focus:ring-offset-1",
-              leftIcon && "pl-9",
+              leftIcon && "pl-9 2xl:pl-10",
               rightIcon && "pr-9",
               !error && " focus:ring-gray-300",
               error && "border-danger focus:ring-danger",
@@ -78,7 +78,7 @@ const Input = React.forwardRef<HTMLInputElement, InputProps>(
           {rightIcon && (
             <div
               className={cn(
-                "absolute right-3 flex items-center text-muted-foreground",
+                "absolute right-3 2xl:right-4 flex items-center text-muted-foreground",
                 onRightIconClick ? "cursor-pointer hover:text-primary" : "pointer-events-none"
               )}
               onClick={onRightIconClick}

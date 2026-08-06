@@ -55,7 +55,7 @@ export default function ForgotPasswordPage() {
             <form onSubmit={handleSubmit} className="space-y-4">
               <Input
                 label="Email address"
-                className="border-primary!"
+                className="border-primary! 2xl:py-3"
                 type="email"
                 placeholder="you@example.com"
                 leftIcon={<Mail className="size-4" />}
@@ -67,7 +67,7 @@ export default function ForgotPasswordPage() {
               <button
                 type="submit"
                 disabled={isPending}
-                className="gradient mt-8 flex w-full items-center justify-center gap-2 rounded-lg py-2.5 text-sm font-medium text-white transition-colors disabled:opacity-60"
+                className="gradient mt-8 flex w-full items-center justify-center gap-2 rounded-lg py-2.5 2xl:py-3.5 text-sm font-medium text-white transition-colors disabled:opacity-60"
               >
                 {isPending && <Loader2 className="h-4 w-4 animate-spin" />}
                 {isPending ? "Sending..." : "Send reset link"}

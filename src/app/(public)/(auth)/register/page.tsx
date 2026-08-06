@@ -68,7 +68,7 @@ export default function RegisterPage() {
           <div className="space-y-4">
             <Input
               label="Full Name"
-              className="border-primary!"
+              className="border-primary! 2xl:py-3"
               type="text"
               placeholder="Awais Faryad"
               leftIcon={<User className="size-4" />}
@@ -78,7 +78,7 @@ export default function RegisterPage() {
             />
             <Input
               label="Email"
-              className="border-primary!"
+              className="border-primary! 2xl:py-3"
               type="email"
               placeholder="you@example.com"
               leftIcon={<Mail className="size-4" />}
@@ -91,7 +91,7 @@ export default function RegisterPage() {
                 label="Password"
                 type={show ? "text" : "password"}
                 placeholder="••••••••"
-                className="border-primary!"
+                className="border-primary! 2xl:py-3"
                 leftIcon={<Lock className="size-4" />}
                 rightIcon={show ? <Eye className="h-4 w-4" /> : <EyeOff className="h-4 w-4" />}
                 onRightIconClick={() => setShow(!show)}
@@ -122,7 +122,7 @@ export default function RegisterPage() {
           <button
             type="submit"
             disabled={isPending}
-            className="gradient flex w-full mt-8 items-center justify-center gap-2 rounded-lg py-2.5 text-sm font-medium text-white transition-colors disabled:opacity-60"
+            className="gradient flex w-full mt-8 items-center justify-center gap-2 rounded-lg py-2.5 2xl:py-3.5 text-sm font-medium text-white transition-colors disabled:opacity-60"
           >
             {isPending && <Loader2 className="h-4 w-4 animate-spin" />}
             {isPending ? "Creating account..." : "Create account"}
