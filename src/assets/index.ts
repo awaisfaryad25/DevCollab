@@ -12,3 +12,6 @@ export { default as LeadDeveloper } from "./team/LeadDeveloper.jpg";
 export { default as ProductManager } from "./team/ProductManager.jpg";
 export { default as SoftwareEngineer } from "./team/SoftwareEngineer.jpg";
 export { default as UXDesigner } from "./team/UXDesigner.jpg";
+
+// Team Member Img
+export { default as Laptop } from "./blogs/laptop.jpg";

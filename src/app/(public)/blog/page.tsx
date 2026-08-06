@@ -1,5 +1,7 @@
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
+import { blogs } from "@/app/data/blogs";
+import BlogCard from "../components/blogs/BlogCard";
 
 const posts = [
   {
@@ -62,6 +64,16 @@ export default function BlogPage() {
       {/* Posts */}
       <section className="px-6 py-20">
         <div className="w-full max-w-7xl mx-auto space-y-8">
+          <div className="flex items-center justify-between mb-10">
+            <h2 className="text-2xl lg:text-3xl 4xl:text-4xl font-bold text-brand-blue">
+              Latest Blogs
+            </h2>
+          </div>
+          <div className="grid md:grid-cols-2 xl:grid-cols-3 gap-6 4xl:gap-7">
+            {blogs.map((blog) => (
+              <BlogCard key={blog.slug} {...blog} href={`/blogs/${blog.slug}`} />
+            ))}
+          </div>
           {posts.map((post) => (
             <Link
               key={post.slug}
