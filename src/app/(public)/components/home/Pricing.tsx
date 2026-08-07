@@ -78,7 +78,7 @@ const Pricing = () => {
               className={cn(
                 "flex flex-col rounded-xl border p-6",
                 plan.highlight
-                  ? "border-secondary bg-secondary text-white shadow-lg shadow-secondary dark:shadow-violet-900/30"
+                  ? "border-secondary bg-primary text-white shadow-lg shadow-secondary dark:shadow-violet-900/30"
                   : "border-border bg-background"
               )}
             >
@@ -116,7 +116,7 @@ const Pricing = () => {
               <p
                 className={cn(
                   "mt-2 text-sm",
-                  plan.highlight ? "text-white/80" : "text-muted-foreground"
+                  plan.highlight ? "text-white" : "text-muted-foreground"
                 )}
               >
                 {plan.desc}
@@ -146,7 +146,7 @@ const Pricing = () => {
                   "rounded-lg px-4 py-2.5 text-center text-sm font-medium transition-colors",
                   plan.highlight
                     ? "bg-white text-[#010066] hover:bg-violet-50"
-                    : "border border-border bg-background text-foreground hover:bg-accent"
+                    : "border border-border bg-primary text-white hover:bg-primary"
                 )}
               >
                 {plan.cta}
