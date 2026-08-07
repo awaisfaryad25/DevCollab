@@ -81,8 +81,8 @@ export default function AboutPage() {
       </section>
 
       {/* Mission */}
-      <section className="mx-auto max-w-7xl px-6 py-20 bg-muted/40">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-16">
+      <section className="px-6 py-20 bg-muted/40">
+        <div className="mx-auto max-w-7xl grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-16">
           {items.map((item, index) => {
             const Icon = item.icon;
             return (

@@ -36,7 +36,7 @@ const NavBar = () => {
 
   return (
     <>
-      <nav className={` px-6 lg:px-8 sticky top-0 z-50 transition-all duration-300 ${ isScrolled ? " backdrop-blur-lg shadow-lg" : " shadow-md" }`} >
+      <nav className={` px-6 lg:px-8 sticky top-0 z-50 transition-all duration-300 ${ isScrolled ? " backdrop-blur-lg bg-muted/40 shadow-lg" : "bg-accent shadow-md" }`} >
         <div className="w-full max-w-7xl mx-auto">
           <div className="flex items-center justify-between h-16">
             <div className="lg:pr-10">
