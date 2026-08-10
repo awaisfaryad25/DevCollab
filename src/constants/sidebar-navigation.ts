@@ -2,6 +2,7 @@
 import {
   LayoutDashboard, BarChart3, FileText, Users, Building2, FolderKanban, CheckSquare, CreditCard, 
   Receipt, ArrowLeftRight, Mail, Bell, Activity, Settings,
+  MessageCircleMore,
 } from "lucide-react";
 
 export type SidebarItem = {
@@ -32,6 +33,7 @@ export const sidebarData: SidebarSection[] = [
       { title: "Workspaces", url: "/workspaces", icon: Building2 },
       { title: "Projects", url: "/projects", icon: FolderKanban },
       { title: "Tasks", url: "/tasks", icon: CheckSquare },
+      { title: "Messages", url: "/messages", icon: MessageCircleMore },
     ],
   },
   {
