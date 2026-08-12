@@ -16,7 +16,7 @@ export default function ContactPage() {
     <main className="min-h-screen bg-background">
       {/* Header */}
       <PageHero 
-        eyebrow="Contact"
+        eyebrow="Contact Us"
         image={ContactHero}
         title="Get in touch"
         description="Questions, feedback, or just want to say hi? We read every message."
@@ -26,8 +26,8 @@ export default function ContactPage() {
         <div className="mx-auto grid w-full max-w-7xl gap-12 md:grid-cols-2">
           {/* Info */}
           <div className="space-y-4 4xl:space-y-6">
-            <h2 className="font-display text-xl xs:text-2xl md:text-3xl lg:text-4xl xl:text-[40px] 4xl:text-5xl font-bold leading-[1.3] text-brand-blue">
-              <span className="text-brand-green">Let&#8217;s Discuss</span> Your Next Project
+            <h2 className="font-display text-xl xs:text-2xl md:text-3xl lg:text-4xl xl:text-[40px] 4xl:text-5xl font-bold leading-[1.3] text-secondary!">
+              <span className="text-primary">Let&#8217;s Discuss</span> <span className="text-secondary">Your Next Project</span> 
             </h2>
             
             <p className="text-sm md:text-base 4xl:text-lg font-normal leading-relaxed text-text-body 4xl:max-w-2xl">
