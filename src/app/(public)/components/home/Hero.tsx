@@ -11,6 +11,13 @@ const Hero = () => {
       <div className="pointer-events-none absolute inset-0 flex items-center justify-center">
         <div className="h-120 w-200 rounded-full bg-primary opacity-20 blur-3xl dark:bg-secondary/20" />
       </div>
+      <div
+        className="absolute inset-0 opacity-30"
+        style={{
+          backgroundImage: `linear-gradient(rgba(14,165,233,0.3) 1px, transparent 1px), linear-gradient(90deg, rgba(14,165,233,0.3) 1px, transparent 1px)`,
+          backgroundSize: "100px 100px",
+        }}
+      />
 
       <div className="relative mx-auto max-w-3xl">
         <span className=" inline-flex items-center gap-1.5 rounded-full border border-violet-200 bg-violet-50 px-3 py-1 text-xs font-medium text-[#010066] dark:border-[#010066]">

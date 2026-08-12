@@ -10,6 +10,8 @@ import {
   type LucideIcon,
 } from "lucide-react";
 import Team from '../components/Team'
+import PageHero from "../components/global/PageHero";
+import { AboutHero } from "@/assets";
 
 const values = [
   {
@@ -64,21 +66,11 @@ export default function AboutPage() {
   return (
     <main className="min-h-screen bg-background">
       {/* Hero */}
-      <section className="border-b border-border px-6 py-24 text-center">
-        <div className="mx-auto max-w-2xl">
-          <span className="mb-3 inline-block text-xs font-semibold uppercase tracking-widest text-primary">
-            About us
-          </span>
-          <h1 className="text-4xl font-semibold tracking-tight text-foreground md:text-5xl">
-            We build tools for teams that ship
-          </h1>
-          <p className="mt-6 text-base leading-relaxed text-muted-foreground">
-            DevCollab started as a side project to solve our own frustration with
-            bloated project management tools. Today it helps hundreds of dev teams
-            move faster without the noise.
-          </p>
-        </div>
-      </section>
+      <PageHero 
+        image={AboutHero}
+        title="We build tools for teams that ship"
+        description="DevCollab started as a side project to solve our own frustration with bloated project management tools. Today it helps hundreds of dev teams move faster without the noise."
+      />
 
       {/* Mission */}
       <section className="px-6 py-20 bg-muted/40">

@@ -2,6 +2,8 @@ import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 import { blogs } from "@/app/data/blogs";
 import BlogCard from "../components/blogs/BlogCard";
+import PageHero from "../components/global/PageHero";
+import { BlogsHero } from "@/assets";
 
 const posts = [
   {
@@ -46,20 +48,12 @@ export default function BlogPage() {
   return (
     <main className="min-h-screen bg-background">
       {/* Header */}
-      <section className="border-b border-border bg-muted/40 px-6 py-20 text-center">
-        <div className="mx-auto max-w-2xl">
-          <span className="mb-3 inline-block text-xs font-semibold uppercase tracking-widest text-secondary">
-            Blog
-          </span>
-          <h1 className="text-4xl font-semibold tracking-tight text-foreground">
-            Thinking out loud
-          </h1>
-          <p className="mt-4 text-base text-muted-foreground">
-            Engineering deep-dives, product updates, and lessons learned building
-            DevCollab.
-          </p>
-        </div>
-      </section>
+      <PageHero 
+        eyebrow="Blogs"
+        image={BlogsHero}
+        title="Thinking out loud"
+        description="Engineering deep-dives, product updates, and lessons learned building DevCollab."
+      />
 
       {/* Posts */}
       <section className="px-6 py-20">

@@ -15,3 +15,9 @@ export { default as UXDesigner } from "./team/UXDesigner.jpg";
 
 // Team Member Img
 export { default as Laptop } from "./blogs/laptop.jpg";
+
+// 
+export { default as AboutHero } from "./about/about-hero.jpg";
+
+export { default as BlogsHero } from "./blogs/blogs-hero.jpg";
+
