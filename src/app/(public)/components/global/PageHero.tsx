@@ -68,7 +68,7 @@ const PageHero: React.FC<PageHeroProps> = ({
             <div className="flex flex-wrap items-center gap-4 md:gap-5 pt-4">
               <Link
                 href={href}
-                className="group flex items-center gap-2 font-semibold border border-white hover:border-primary hover:bg-linear-to-r from-primary to-secondary px-5 py-3 rounded-lg relative cursor-pointer overflow-hidden"
+                className="group flex items-center gap-2 font-semibold border border-white hover:border-transparent hover:bg-linear-to-r from-primary to-secondary px-5 py-3 rounded-lg relative cursor-pointer overflow-hidden"
               >
                 <span className="relative z-10 text-white transition-all duration-300">
                   {btnTitle}

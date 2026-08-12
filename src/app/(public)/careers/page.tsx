@@ -1,5 +1,7 @@
 import Link from "next/link";
 import { MapPin, Clock } from "lucide-react";
+import PageHero from "../components/global/PageHero";
+import { CareerHero } from "@/assets";
 
 const roles = [
   {
@@ -138,20 +140,12 @@ export default function CareersPage() {
   return (
     <main className="min-h-screen bg-background">
       {/* Header */}
-      <section className="border-b border-border bg-muted/40 px-6 py-20 text-center">
-        <div className="mx-auto max-w-2xl">
-          <span className="mb-3 inline-block text-xs font-semibold uppercase tracking-widest text-primary">
-            Careers
-          </span>
-          <h1 className="text-4xl font-semibold tracking-tight text-foreground">
-            Build the tool builders use
-          </h1>
-          <p className="mt-4 text-base text-muted-foreground">
-            We're a small, fully remote team on a mission to make software teams
-            10x more effective. If that sounds like your kind of problem, read on.
-          </p>
-        </div>
-      </section>
+      <PageHero 
+        eyebrow="Careers"
+        image={CareerHero}
+        title="Build the tool builders use"
+        description="We're a small, fully remote team on a mission to make software teams 10x more effective. If that sounds like your kind of problem, read on."
+      />
 
       {/* Perks */}
       <section className="px-6 py-20">

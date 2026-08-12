@@ -18,6 +18,7 @@ export { default as Laptop } from "./blogs/laptop.jpg";
 
 // 
 export { default as AboutHero } from "./about/about-hero.jpg";
-
 export { default as BlogsHero } from "./blogs/blogs-hero.jpg";
+export { default as CareerHero } from "./career/career-hero.jpg";
+export { default as ContactHero } from "./contact/contact-hero.jpg";
 

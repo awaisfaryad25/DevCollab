@@ -1,6 +1,8 @@
 
 import { Mail, Phone, MessageSquareMore } from "lucide-react";
 import ContactForm from "../components/contact/ContactForm";
+import PageHero from "../components/global/PageHero";
+import { ContactHero } from "@/assets";
 
 export default function ContactPage() {
 
@@ -13,19 +15,12 @@ export default function ContactPage() {
   return (
     <main className="min-h-screen bg-background">
       {/* Header */}
-      <section className="border-b border-border bg-muted/40 px-6 py-20 text-center">
-        <div className="mx-auto max-w-xl">
-          <span className="mb-3 inline-block text-xs font-semibold uppercase tracking-widest text-secondary">
-            Contact
-          </span>
-          <h1 className="text-4xl font-semibold tracking-tight text-foreground">
-            Get in touch
-          </h1>
-          <p className="mt-4 text-base text-muted-foreground">
-            Questions, feedback, or just want to say hi? We read every message.
-          </p>
-        </div>
-      </section>
+      <PageHero 
+        eyebrow="Contact"
+        image={ContactHero}
+        title="Get in touch"
+        description="Questions, feedback, or just want to say hi? We read every message."
+      />
 
       <section className="px-6 py-20">
         <div className="mx-auto grid w-full max-w-7xl gap-12 md:grid-cols-2">
