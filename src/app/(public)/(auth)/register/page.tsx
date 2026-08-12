@@ -47,12 +47,13 @@ export default function RegisterPage() {
       </div>
       <BackgroundGradient />
 
-      <div className="p-4 w-full max-w-sm mx-auto mt-6 lg:mt-10">
+      <div className="flex min-h-[calc(100vh-100px)] w-full items-center justify-center p-4">
+        <div className="w-full max-w-sm">
         <div className="mb-4">
-          <h1 className="text-2xl lg:text-3xl font-semibold text-foreground">
+          <h1 className="text-2xl lg:text-3xl 2xl:text-4xl font-semibold text-foreground">
             Create your account
           </h1>
-          <p className="mt-1 text-sm text-muted-foreground">
+          <p className="mt-1 text-sm 2xl:text-base text-muted-foreground">
             Free forever. No credit card needed.
           </p>
         </div>
@@ -68,7 +69,7 @@ export default function RegisterPage() {
           <div className="space-y-4">
             <Input
               label="Full Name"
-              className="border-primary! 2xl:py-3"
+              className="border-primary!"
               type="text"
               placeholder="Awais Faryad"
               leftIcon={<User className="size-4" />}
@@ -78,7 +79,7 @@ export default function RegisterPage() {
             />
             <Input
               label="Email"
-              className="border-primary! 2xl:py-3"
+              className="border-primary!"
               type="email"
               placeholder="you@example.com"
               leftIcon={<Mail className="size-4" />}
@@ -91,7 +92,7 @@ export default function RegisterPage() {
                 label="Password"
                 type={show ? "text" : "password"}
                 placeholder="••••••••"
-                className="border-primary! 2xl:py-3"
+                className="border-primary!"
                 leftIcon={<Lock className="size-4" />}
                 rightIcon={show ? <Eye className="h-4 w-4" /> : <EyeOff className="h-4 w-4" />}
                 onRightIconClick={() => setShow(!show)}
@@ -105,7 +106,7 @@ export default function RegisterPage() {
                   {passwordRules.map(({ label, test }) => (
                     <li key={label} className="flex items-center gap-1.5 text-xs">
                       <CheckCircle2
-                        className={`h-3.5 w-3.5 ${
+                        className={`size-3.5 ${
                           test(password) ? "text-success" : "text-muted-foreground"
                         }`}
                       />
@@ -122,7 +123,7 @@ export default function RegisterPage() {
           <button
             type="submit"
             disabled={isPending}
-            className="gradient flex w-full mt-8 items-center justify-center gap-2 rounded-lg py-2.5 2xl:py-3.5 text-sm font-medium text-white transition-colors disabled:opacity-60"
+            className="gradient flex w-full mt-8 items-center justify-center gap-2 rounded-lg py-2.5 2xl:py-3 text-sm font-medium text-white transition-colors disabled:opacity-60"
           >
             {isPending && <Loader2 className="h-4 w-4 animate-spin" />}
             {isPending ? "Creating account..." : "Create account"}
@@ -163,6 +164,7 @@ export default function RegisterPage() {
             Log in
           </Link>
         </p>
+        </div>
       </div>
     </div>
   );
