@@ -13,7 +13,7 @@ interface ProtectedLayoutClientProps {
 
 export function ProtectedLayoutClient({ children, }: ProtectedLayoutClientProps) {
 
-  const { isAuthenticated } = useAuthStore();
+  const isAuthenticated = useAuthStore((state) => state.isAuthenticated)
   const router = useRouter();
   const [hydrated, setHydrated] = useState(false);
 
@@ -27,7 +27,7 @@ export function ProtectedLayoutClient({ children, }: ProtectedLayoutClientProps)
     if (hydrated && !isAuthenticated) {
       router.replace("/login");
     }
-  }, [hydrated, isAuthenticated, router]);
+  }, [hydrated, isAuthenticated]);
 
   // Show nothing while hydrating or redirecting
   if (!hydrated || !isAuthenticated) return null;
